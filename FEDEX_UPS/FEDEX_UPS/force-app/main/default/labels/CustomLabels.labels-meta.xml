@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Client_Secret</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Client Secret</shortDescription>
+        <value>6617904e34b04d21a32fdae4222fec9c</value>
+    </labels>
+    <labels>
+        <fullName>Fedex_client_ID</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Fedex client ID</shortDescription>
+        <value>l7f8ad6fc3c6f6462b9de028d42f1df54c</value>
+    </labels>
+    <labels>
+        <fullName>Fedex_end_point</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Fedex end point</shortDescription>
+        <value>https://apis-sandbox.fedex.com</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,55 @@
+<template>
+  <lightning-card title="Shipping Rates">
+    <div class="slds-p-around_medium">
+      <!--<lightning-input label="Origin Address" value={originAddress} onchange={handleOriginAddressChange}></lightning-input>-->
+      <div class="slds-p-around_medium">
+        <b>Origin Address</b>
+        <lightning-input name="Origin1" label="Street Address" value={originStreetAddress}></lightning-input>
+        <lightning-input name="Origin2" label="City" value={originCity}></lightning-input>
+        <lightning-input name="Origin3" required label="Zip Code" value={originZipCode}
+          onchange={handleOriginAddressZipChange}></lightning-input>
+      </div>
+
+      <div class="slds-p-around_medium">
+        <b>Destination Address</b>
+        <lightning-input name="Destination1" label="Street Address" value={destinationStreetAddress}></lightning-input>
+        <lightning-input name="Destination2" label="City" value={destinationCity}></lightning-input>
+        <lightning-input name="Destination3" required label="Zip Code" value={destinationZipCode}
+          onchange={handleDestinationAddressZipChange}></lightning-input>
+      </div>
+      <div class="slds-p-around_medium">
+        <lightning-input class="slds-p-around_medium" name="Weight" required label="Weight" value={weightOfPacket}
+          onchange={handleWeightChange}></lightning-input>
+      </div>
+      <!--<lightning-input label="Destination Address" value={destinationAddress} onchange={handleDestinationAddressChange}></lightning-input>-->
+      <lightning-button class="slds-p-around_medium" variant="brand" label="Get Rates" onclick={getShippingRates}>
+      </lightning-button>
+    </div>
+    <template if:true={rates}>
+      <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+        <thead>
+          <tr class="slds-line-height_reset">
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Service">Service</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Rate">Rate ($)</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <template for:each={rates} for:item="rate">
+            <tr key={rate.service}>
+              <td data-label="Service">
+                <div class="slds-truncate" title={rate.service}>{rate.service}</div>
+              </td>
+              <td data-label="Rate">
+                <div class="slds-truncate" title={rate.rate}>{rate.rate}</div>
+              </td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </template>
+  </lightning-card>
+</template>
